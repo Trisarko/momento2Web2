@@ -1,0 +1,40 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+}
+
+header{
+    margin-top: 95px;
+}
+
+#appoint{
+    margin-top: 95px;
+}
+
+#about{
+    margin-top: 120px;
+}
+
+.card{
+    border: none;
+}
+
+#register{
+    margin-top: 100px;
+}
+
+#sectionone{
+    background: #f1f1f1;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#footer{
+    background: #0077ff;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-top: 40px;
+}

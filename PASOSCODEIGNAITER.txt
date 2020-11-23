@@ -1,0 +1,70 @@
+1- URL Amigables
+ se crea un archivo en la raiz con el nombre .htaccess con la siguiente info y se le agrega la ruta dondese guarda
+ el proyecto.
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /ExamenSegundoMomento/index.php/$1 [L]   
+
+
+2- en el archivo .config se cambian los siguientes parametros, base_url ruta donde se guarda el proyecto.
+index_page se cambia por la pagina en la que el proyecto se abrira por defecto en el navegador.
+
+$config['base_url'] = 'http://localhost/ExamenSegundoMomento/';
+$config['index_page'] = 'home.php'; 
+
+
+3- en el archivo routes se agrega el controlador por defecto
+
+$route['default_controller'] = 'home';
+
+
+4-  en el autoload agregamos 'url' para que nos tome el css, iamgenes y demas rutas que sue el proyecto.
+
+$autoload['helper'] = array('url');
+
+
+5- para css e imagenes en la raiz se crea una carpeta con el nombre assets que contenga en su interior una carpeta
+para css, img, etc.
+
+
+6- Luego de crear el modelo para que traiga la info de la base de datos debemos configurarlo en el autoload 
+
+$autoload['model'] = array('Appointments');
+
+
+7- Configurar base de daos, luego de crearla en config database agregamos los datos
+
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'medicalapp',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+
+8- luego en el autoload debemos configurar para que autocargue la base de datos 
+
+$autoload['libraries'] = array('database');
+
+
+9-
+
+
+
